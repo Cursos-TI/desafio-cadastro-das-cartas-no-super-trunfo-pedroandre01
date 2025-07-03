@@ -1,0 +1,60 @@
+#include <stdio.h>
+
+int main() {
+    // Declaração das variáveis
+    char codigo1[4], codigo2[4];
+    unsigned long int populacao1, populacao2;
+    float area1, area2, pib1, pib2;
+    int pontos1, pontos2;
+    float dens1, dens2, pibPerCapita1, pibPerCapita2;
+    float superPoder1, superPoder2;
+
+    // Entrada - Carta 1
+    printf("Cadastro da Carta 1:\n");
+    printf("Código: ");
+    scanf("%s", codigo1);
+    printf("População: ");
+    scanf("%lu", &populacao1);
+    printf("Área: ");
+    scanf("%f", &area1);
+    printf("PIB: ");
+    scanf("%f", &pib1);
+    printf("Pontos turísticos: ");
+    scanf("%d", &pontos1);
+
+    // Cálculos - Carta 1
+    dens1 = populacao1 / area1;
+    pibPerCapita1 = pib1 / populacao1;
+    superPoder1 = pib1 + populacao1 + pontos1 + pibPerCapita1 + (1 / dens1);
+
+    // Entrada - Carta 2
+    printf("\nCadastro da Carta 2:\n");
+    printf("Código: ");
+    scanf("%s", codigo2);
+    printf("População: ");
+    scanf("%lu", &populacao2);
+    printf("Área: ");
+    scanf("%f", &area2);
+    printf("PIB: ");
+    scanf("%f", &pib2);
+    printf("Pontos turísticos: ");
+    scanf("%d", &pontos2);
+
+    // Cálculos - Carta 2
+    dens2 = populacao2 / area2;
+    pibPerCapita2 = pib2 / populacao2;
+    superPoder2 = pib2 + populacao2 + pontos2 + pibPerCapita2 + (1 / dens2);
+
+    // Exibição
+    printf("\n--- Comparação das Cartas ---\n");
+
+    printf("População: %d\n", populacao1 > populacao2);
+    printf("Área: %d\n", area1 > area2);
+    printf("PIB: %d\n", pib1 > pib2);
+    printf("Pontos turísticos: %d\n", pontos1 > pontos2);
+    printf("PIB per capita: %d\n", pibPerCapita1 > pibPerCapita2);
+    printf("Densidade Populacional (menor vence): %d\n", dens1 < dens2);
+    printf("Super Poder: %d\n", superPoder1 > superPoder2);
+
+    return 0;
+}
